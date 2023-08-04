@@ -1,0 +1,55 @@
+
+<div fxLayoutAlign="center center">
+    <mat-form-field>
+        <!--
+            bilo koj dogadjaj[ANY]
+            u okviru posmatranog dogadjaja[EVENT]
+            u posmatranom polju[TARGET]
+            ciju vrednost[VALUE] osluskujemo
+        -->
+        <input type="text" matInput (keyup)="doFilter($any($event.target).value)" placeholder="Search">
+
+    </mat-form-field>
+</div>
+
+<mat-table [dataSource]="bookSource" matSort>
+
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header >Id</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.id | number }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header >name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <ng-container>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let rows; columns: displayedColumns"></mat-row>    
+
+</mat-table>
+
+<mat-paginator [pageSize]="20" [pageSizeOptions]="[5, 10, 20, 50]"></mat-paginator>
+
+<!--    TODO 
+    
+-->
